@@ -359,13 +359,12 @@ body {
   .inicio-sci a:hover {
     color:#eee;
   }
-  /* Al pasar el mouse: la capa crece */
+
 .inicio-sci a:hover::after {
     width: 200%;
     height: 200%;
   }
 
-  /* Asegurar que el contenido (icono) esté encima */
 .inicio-sci a > * {
     position: relative;
     z-index: 1;
@@ -443,9 +442,33 @@ body {
   }
 
   @media (max-width: 767px) {
-  .home-img {
-    display: none; /* Ocultar links */
-  }
+    .inicio-contenido {
+        max-width: 100%;
+        padding: 0 5%;
+    }
+    .inicio-contenido h1 {
+        font-size: 35px;
+    }
+    .inicio-contenido h3 {
+        font-size: 21px;
+    }
+    .inicio-contenido p {
+        font-size: 14px;
+        margin: 10px 0 30px;
+    }
+    .inicio-contenido .btn-Box {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        height: 110px;
+    }
+    .home-img {
+        display: none;
+    }
+    .inicio-sci {
+        right: auto;
+        bottom: 50px;
+    }
 }
 /* Main section end */
 
