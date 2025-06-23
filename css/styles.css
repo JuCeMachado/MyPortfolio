@@ -130,7 +130,6 @@ body {
 /* Inicio section start */
 .inicio {
    height: 100vh;
-   /*background: url(''); */
    display: flex;
    align-items: center;
    padding: 0 10%;
@@ -442,33 +441,33 @@ body {
   }
 
   @media (max-width: 767px) {
-    .inicio-contenido {
-        max-width: 100%;
-        padding: 0 5%;
+    .inicio {
+     display: flex;
+     flex-direction: column;
+     padding: 20% 5% 5% 5%;
     }
+    
     .inicio-contenido h1 {
-        font-size: 35px;
+        font-size: 40px;
     }
     .inicio-contenido h3 {
-        font-size: 21px;
+        font-size: 25px;
     }
     .inicio-contenido p {
         font-size: 14px;
-        margin: 10px 0 30px;
+        margin: 10px 0 10px;
+        padding-bottom: 10%;
     }
     .inicio-contenido .btn-Box {
         width: 100%;
-        flex-direction: column;
-        gap: 15px;
-        height: 110px;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 50px;
     }
     .home-img {
         display: none;
     }
-    .inicio-sci {
-        right: auto;
-        bottom: 50px;
-    }
+   
 }
 /* Main section end */
 
@@ -519,7 +518,7 @@ body {
 }
 
 @media (max-width: 767px){
-    
+
     .project-card p {
         display: none;
     }
@@ -838,12 +837,17 @@ body {
 
 /* DISEÑO MÓVIL */
 @media (max-width: 1023px) {
+    .contact__form-container {
+        padding: 0 20px 0 20px;
+    }
+
     .contact__container-image {
        display: none;
     }
 
     .contact__form {
         flex-direction: column;
+        
     }
     .contact__form-container h2 {
       font-size: 30px;
