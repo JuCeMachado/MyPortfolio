@@ -426,10 +426,9 @@ body {
 }
 .home-img .img-box .img-item img{
     position: absolute;
-    top: 25px;
     display: block;
-    width: 85%;
-    object-fit: cover;
+    width: 110%;
+    object-fit:cover;
     mix-blend-mode: lighten;
 
 }

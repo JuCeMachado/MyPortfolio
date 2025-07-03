@@ -1,27 +1,3 @@
-//funcion para enviar whatsapp
-function enviarWhatsapp(event){
-    event.preventDefault();
-    //obtener los valores de entrada
-    const name = document.getElementById("name").value;
-    const mail = document.getElementById("email").value;
-    const mensaje = document.getElementById("mensaje").value;
-
-    if(name.trim() === "" || mensaje.trim() === ""){
-        alert("Por favor, completa todos los campos");
-        return;
-    }
-    // Número de teléfono al que se enviará el mensaje (debe incluir el código de país si es necesario)
-    const telefono = "5493751578133"; // Reemplaza con el número de teléfono
-    
-    // Mensaje predeterminado que se abrirá en WhatsApp
-    const mensajeWhatsapp = `Hola ${name}, ${mensaje}`;
-    
-    // Construir el enlace de WhatsApp
-    const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensajeWhatsapp)}`;
-    //
-    window.open(url, "_blank");
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   const navbarToggle = document.getElementById('navbarToggle');
   const navbar = document.querySelector('.navbar');
@@ -35,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Ocultar header al hacer scroll hacia abajo
   window.addEventListener('scroll', function () {
-    // Si el navbar está abierto, no ocultar el header
     if (navbar.classList.contains('show')) return;
 
     if (window.scrollY > lastScrollY && window.scrollY > 50) {
@@ -47,11 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
     lastScrollY = window.scrollY;
   });
 
-  // Formulario WhatsApp
-  const form = document.querySelector('.contact__form');
-  if (form) {
-    form.addEventListener('submit', enviarWhatsapp);
-  }
+  // Enviar formulario a mi correo
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    const mailtoLink = `mailto:Ju.Ce.Ma456@gmail.com?subject=Mensaje de ${encodeURIComponent(nombre)}&body=${encodeURIComponent(mensaje + "\n\nEmail: " + email)}`;
+
+    window.location.href = mailtoLink;
+  });
 });
 
 
