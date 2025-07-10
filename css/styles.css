@@ -504,6 +504,7 @@ body {
     
     .inicio-contenido h1 {
         font-size: 40px;
+        padding-top: 10%;
     }
     .inicio-contenido h3 {
         font-size: 25px;
@@ -526,8 +527,8 @@ body {
     }
     
     .home-img .img-box {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
         left: 0;
     }  
 }
